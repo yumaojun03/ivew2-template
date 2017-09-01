@@ -31,8 +31,8 @@
 }
 
 .layout-menu-left {
-    background: #464c5b;
-    /*min-width: 100px;*/
+    background: #fff;
+    min-width: 100px;
 }
 
 .layout-header {
@@ -44,9 +44,9 @@
 .layout-logo-left {
     width: 90%;
     height: 30px;
-    background: #5b6270;
+    /* background: #5b6270; */
     border-radius: 3px;
-    margin: 15px auto;
+    /* margin: 15px auto; */
     line-height: 30px;
     color: white;
     text-align: center;
@@ -75,12 +75,11 @@
 <div class="layout" :class="{'layout-hide-text': spanLeft < 5}">
     <Row type="flex">
         <i-col :span="spanLeft" class="layout-menu-left">
-            <Menu :active-name="setActive" theme="dark" width="auto" @on-select="routeTo">
-                <div class="layout-logo-left">
-                    <h3>后台管理</h3></div>
+            <Menu :active-name="setActive" theme="light" width="auto" @on-select="routeTo" accordion>
+                <div class="layout-logo-left"></div>
                 <Submenu name="1">
                     <template slot="title">
-                       <Icon type="person-stalker"></Icon> 
+                       <Icon type="ios-people"></Icon> 
                             <span class="layout-text">用户管理</span>
                     </template>
                 <Menu-item name="about">
@@ -161,6 +160,7 @@
         </i-col>
     </Row>
 </div>
+
 
 </template>
 
