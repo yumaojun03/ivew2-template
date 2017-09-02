@@ -20,6 +20,16 @@ axios.defaults.headers.common = {
 };
 axios.defaults.baseURL = 'http://localhost:8001'
 
+// 添加LoadingBar 加载进度条
+router.beforeEach((to, from, next) => {
+  iView.LoadingBar.start();
+  next();
+});
+
+router.afterEach((to, from, next) => {
+  iView.LoadingBar.finish();
+});
+
 new Vue({
     el: '#app',
     axios,

@@ -36,7 +36,7 @@
 }
 
 .layout-header {
-    height: 60px;
+    height: 40px;
     background: #eee;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 }
@@ -64,6 +64,10 @@
 
 .ivu-col {
     transition: width .2s ease-in-out;
+}
+
+.dropdown-selected-icon {
+    text-indent:50px;
 }
 
 /* .box-shadow: rgba(0,0,0,.25) 0 1px 0, inset rgba(255,255,255,.16) 0 1px 0; */
@@ -139,6 +143,19 @@
                 <i-button type="text" @click.native="toggleClick">
                     <Icon type="navicon" size="32"></Icon>
                 </i-button>
+                <Dropdown style="margin-left: 20px" placement="bottom-end">
+                    <Icon type="person"></Icon>
+                    <span>喻茂峻</span>
+                    <Icon type="arrow-down-b"></Icon>
+                    <DropdownMenu slot="list">
+                        <DropdownItem><Icon type="android-settings"></Icon>设置</DropdownItem>
+                        <DropdownItem><Icon type="help-circled"></Icon>帮助</DropdownItem>
+                        <DropdownItem divided disabled>主题</DropdownItem>
+                        <DropdownItem><Icon type="checkmark-round"></Icon> Dark</DropdownItem>
+                        <DropdownItem>Light</DropdownItem>
+                        <DropdownItem divided><Icon type="arrow-right-c"></Icon>退出</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
             </div>
             <div class="layout-breadcrumb">
                 <Breadcrumb>
@@ -155,7 +172,7 @@
                 </div>
             </div>
             <div class="layout-copy">
-                2011-2016 &copy; NSLab
+                2017 &copy; Define IOT
             </div>
         </i-col>
     </Row>

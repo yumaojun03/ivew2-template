@@ -13,37 +13,46 @@ export default new Router({
             component: resolve => require(['../components/common/index.vue'], resolve),
             children: [{
                     path: '',
-                    component: resolve => require(['../components/common/about.vue'], resolve)
+                    component: resolve => require(['../components/common/about.vue'], resolve),
+                    name: "about"
                 },
                 {
                     path: '/form',
-                    component: resolve => require(['../components/page/form.vue'], resolve)
+                    component: resolve => require(['../components/page/form.vue'], resolve),
+                    name: "form"
                 },
                 {
                     path: '/table',
-                    component: resolve => require(['../components/page/table.vue'], resolve)
+                    component: resolve => require(['../components/page/table.vue'], resolve),
+                    name: "table"
                 },
                 {
                     path: '/markdown-viewer',
-                    component: resolve => require(['../components/page/markdown-viewer.vue'], resolve)
+                    component: resolve => require(['../components/page/markdown-viewer.vue'], resolve),
+                    name: "markdown"
                 },
                 {
                     path: '/markdown-editor-1',
-                    component: resolve => require(['../components/page/markdown-editor-1.vue'], resolve)
+                    component: resolve => require(['../components/page/markdown-editor-1.vue'], resolve),
+                    name: "markdown1"
                 },
                 {
                     path: '/markdown-editor-2',
-                    component: resolve => require(['../components/page/markdown-editor-2.vue'], resolve)
+                    component: resolve => require(['../components/page/markdown-editor-2.vue'], resolve),
+                    name: "markdown2"
                 },
                 {
                     path: '/rtf',
-                    component: resolve => require(['../components/page/rtf.vue'], resolve)
+                    component: resolve => require(['../components/page/rtf.vue'], resolve),
+                    name: "rtf"
                 },{
                     path: '/upload',
-                    component: resolve => require(['../components/page/upload.vue'], resolve)
+                    component: resolve => require(['../components/page/upload.vue'], resolve),
+                    name: "upload"
                 },{
                     path: '/echarts',
-                    component: resolve => require(['../components/page/echarts.vue'], resolve)
+                    component: resolve => require(['../components/page/echarts.vue'], resolve),
+                    name: "echarts"
                 }
             ]
         },
