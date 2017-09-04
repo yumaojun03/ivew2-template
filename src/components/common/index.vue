@@ -13,8 +13,8 @@
 }
 
 .layout-content {
-    min-height: 600px;
-    margin: 15px;
+    min-height: 65em;
+    margin: .5em;
     overflow: hidden;
     background: #fff;
     border-radius: 4px;
@@ -66,8 +66,8 @@
     transition: width .2s ease-in-out;
 }
 
-.dropdown-selected-icon {
-    text-indent:50px;
+.demo-badge-alone{
+    background: #5cb85c;
 }
 
 /* .box-shadow: rgba(0,0,0,.25) 0 1px 0, inset rgba(255,255,255,.16) 0 1px 0; */
@@ -79,24 +79,32 @@
 <div class="layout" :class="{'layout-hide-text': spanLeft < 5}">
     <Row type="flex">
         <i-col :span="spanLeft" class="layout-menu-left">
-            <Menu :active-name="setActive" theme="light" width="auto" @on-select="routeTo" accordion>
+            <Menu :active-name="setActive" theme="light" width="auto" @on-select="routeTo">
                 <div class="layout-logo-left"></div>
+                <Menu-item name="rtf">
+                    <Icon type="ios-speedometer" :size="iconSize"></Icon>
+                    <span class="layout-text">仪表盘</span>
+                </Menu-item>
                 <Submenu name="1">
                     <template slot="title">
                        <Icon type="ios-people"></Icon> 
-                            <span class="layout-text">用户管理</span>
+                            <span class="layout-text">身份管理</span>
                     </template>
                 <Menu-item name="about">
-                    <Icon type="ios-navigate" :size="iconSize"></Icon>
-                    <span class="layout-text">关于</span>
+                    <Icon type="person" :size="iconSize"></Icon>
+                    <span class="layout-text">用户</span>
                 </Menu-item>
                 <Menu-item name="form">
-                    <Icon type="document" :size="iconSize"></Icon>
-                    <span class="layout-text">表单</span>
+                    <Icon type="person-stalker" :size="iconSize"></Icon>
+                    <span class="layout-text">用户组</span>
                 </Menu-item>
                 <Menu-item name="table">
-                    <Icon type="navicon" :size="iconSize"></Icon>
-                    <span class="layout-text">表格</span>
+                    <Icon type="ios-locked" :size="iconSize"></Icon>
+                    <span class="layout-text">角色</span>
+                </Menu-item>
+                <Menu-item name="table">
+                    <Icon type="ios-grid-view" :size="iconSize"></Icon>
+                    <span class="layout-text">项目</span>
                 </Menu-item>
                 </Submenu>
                 <Submenu>
@@ -105,21 +113,21 @@
                            <span class="layout-text">资产管理</span> 
                     </template>
                 <Menu-item name="markdown-viewer">
-                    <Icon type="social-markdown" :size="iconSize"></Icon>
-                    <span class="layout-text">Markdown</span>
+                    <Icon type="android-laptop" :size="iconSize"></Icon>
+                    <span class="layout-text">服务器</span>
                 </Menu-item>
                 <Menu-item name="markdown-editor-1">
-                    <Icon type="edit" :size="iconSize"></Icon>
-                    <span class="layout-text">Md编辑器(1)</span>
+                    <Icon type="ios-home" :size="iconSize"></Icon>
+                    <span class="layout-text">机房</span>
                 </Menu-item>
                 <Menu-item name="markdown-editor-2">
-                    <Icon type="edit" :size="iconSize"></Icon>
-                    <span class="layout-text">Md编辑器(2)</span>
+                    <Icon type="ios-cog" :size="iconSize"></Icon>
+                    <span class="layout-text">系统用户</span>
                 </Menu-item>
                 </Submenu>
                 <Submenu>
                     <template slot="title">
-                       <Icon type="ios-shuffle-strong"></Icon> 
+                       <Icon type="shuffle"></Icon>
                            <span class="layout-text">持续集成</span> 
                     </template>
                 <Menu-item name="rtf">
@@ -143,7 +151,7 @@
                 <i-button type="text" @click.native="toggleClick">
                     <Icon type="navicon" size="32"></Icon>
                 </i-button>
-                <Dropdown style="margin-left: 20px" placement="bottom-end">
+                <Dropdown style="float:right;padding: 1em;margin-right:2em" placement="bottom-end">
                     <Icon type="person"></Icon>
                     <span>喻茂峻</span>
                     <Icon type="arrow-down-b"></Icon>
@@ -156,6 +164,20 @@
                         <DropdownItem divided><Icon type="arrow-right-c"></Icon>退出</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
+                <Dropdown style="float:right;padding: 1em;margin-right:1em" placement="bottom-end">
+                    <Badge dot>
+                        <Icon type="ios-bell" size="16"></Icon>
+                    </Badge>
+                    <DropdownMenu slot="list">
+                        <DropdownItem><Icon type="android-settings"></Icon><span style="margin-left:1em">设置</span></DropdownItem>
+                        <DropdownItem><Icon type="help-circled"></Icon>帮助</DropdownItem>
+                        <DropdownItem divided disabled>主题</DropdownItem>
+                        <DropdownItem><Icon type="checkmark-round"></Icon> Dark</DropdownItem>
+                        <DropdownItem>Light</DropdownItem>
+                        <DropdownItem divided><Icon type="arrow-right-c"></Icon>退出</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
+
             </div>
             <div class="layout-breadcrumb">
                 <Breadcrumb>
